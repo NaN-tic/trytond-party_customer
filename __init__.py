@@ -7,6 +7,13 @@ from . import party
 def register():
     Pool.register(
         party.Party,
-        party.Invoice,
+        module='party_customer', type_='model')
+    Pool.register(
+        party.Party,
         party.Sale,
+        depends = ['sale'],
+        module='party_customer', type_='model')
+    Pool.register(
+        party.Invoice,
+        depends=['account_invoice'],
         module='party_customer', type_='model')
