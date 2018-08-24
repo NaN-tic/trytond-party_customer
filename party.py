@@ -8,15 +8,13 @@ from trytond.modules.party.party import STATES, DEPENDS
 __all__ = ['Party', 'Invoice', 'Sale']
 
 
-class Party:
-    __metaclass__ = PoolMeta
+class Party(metaclass=PoolMeta):
     __name__ = 'party.party'
 
     customer = fields.Boolean('Customer', states=STATES, depends=DEPENDS)
 
 
-class Invoice:
-    __metaclass__ = PoolMeta
+class Invoice(metaclass=PoolMeta):
     __name__ = 'account.invoice'
 
     @classmethod
@@ -31,8 +29,7 @@ class Invoice:
         cls.party.depends.append('type')
 
 
-class Sale:
-    __metaclass__ = PoolMeta
+class Sale(metaclass=PoolMeta):
     __name__ = 'sale.sale'
 
     @classmethod
