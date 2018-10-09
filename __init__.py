@@ -9,7 +9,6 @@ def register():
         party.Party,
         module='party_customer', type_='model')
     Pool.register(
-        party.Party,
         party.Sale,
         depends = ['sale'],
         module='party_customer', type_='model')
