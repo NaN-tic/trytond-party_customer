@@ -14,5 +14,6 @@ def register():
         module='party_customer', type_='model')
     Pool.register(
         party.Invoice,
+        party.InvoiceLine,
         depends=['account_invoice'],
         module='party_customer', type_='model')
