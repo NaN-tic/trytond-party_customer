@@ -20,8 +20,7 @@ class Invoice(metaclass=PoolMeta):
     @classmethod
     def __setup__(cls):
         super(Invoice, cls).__setup__()
-        customer_domain = [If(Eval('type').in_(['out_invoice',
-                        'out_credit_note']),
+        customer_domain = [If(Eval('type') == 'out',
                 ('customer', '=', True),
                 (),
                 )]
