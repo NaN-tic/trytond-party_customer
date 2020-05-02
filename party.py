@@ -3,15 +3,12 @@
 from trytond.model import fields
 from trytond.pool import PoolMeta
 from trytond.pyson import If, Eval
-from trytond.modules.party.party import STATES, DEPENDS
-
-__all__ = ['Party', 'Invoice', 'InvoiceLine', 'Sale']
 
 
 class Party(metaclass=PoolMeta):
     __name__ = 'party.party'
 
-    customer = fields.Boolean('Customer', states=STATES, depends=DEPENDS)
+    customer = fields.Boolean('Customer')
 
 
 class Invoice(metaclass=PoolMeta):
