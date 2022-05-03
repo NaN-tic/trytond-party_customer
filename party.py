@@ -22,7 +22,7 @@ class Invoice(metaclass=PoolMeta):
                 (),
                 )]
         cls.party.domain.append(customer_domain)
-        cls.party.depends.append('type')
+        cls.party.depends.add('type')
 
 
 class InvoiceLine(metaclass=PoolMeta):
@@ -36,7 +36,7 @@ class InvoiceLine(metaclass=PoolMeta):
                 (),
                 )]
         cls.party.domain.append(customer_domain)
-        cls.party.depends.append('invoice_type')
+        cls.party.depends.add('invoice_type')
 
 
 class Sale(metaclass=PoolMeta):
