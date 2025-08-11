@@ -2,7 +2,7 @@
 # copyright notices and license terms.
 from trytond.pool import Pool
 from . import party
-
+from . import shipment
 
 def register():
     Pool.register(
@@ -16,4 +16,8 @@ def register():
         party.Invoice,
         party.InvoiceLine,
         depends=['account_invoice'],
+        module='party_customer', type_='model')
+    Pool.register(
+        shipment.ShipmentOut,
+        depends=['stock'],
         module='party_customer', type_='model')
